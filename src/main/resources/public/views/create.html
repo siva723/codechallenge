@@ -1,0 +1,81 @@
+<form class="form-horizontal" role="form" ng-submit="createAnnouncement()">
+	<table>
+		<tr>
+			<td>
+				<div class="form-group">
+					<label for="title" class="col-sm-2 control-label">Title</label>
+			</td>
+
+			<td>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="title"
+						placeholder="title.." ng-model="announcement.title">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group">
+					<label for="body" class="col-sm-2 control-label">Announcement</label>
+			</td>
+			<td>
+				<div class="col-sm-10">					
+					<textarea class="form-control" rows="4" cols="50" id="body"  placeholder="Announcement....." form="usrform"  ng-model="announcement.body"/>
+				</div>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<div class="form-group">
+					<label for="startdate" class="col-sm-10 control-label">Start Date</label>
+			</td>
+			<td>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="startdate"
+						placeholder="Start  date....." ng-model="announcement.startDate">
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<div class="form-group">
+					<label for="expirydate" class="col-sm-10 control-label">Expiry Date</label>
+			</td>
+			<td>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="expirydate"
+						placeholder="Expiry date..." ng-model="announcement.expiryDate">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div class="form-group"/>
+			</td>
+			<td>
+				<div class="col-sm-10">
+					<button type="submit" class="btn btn-default">New Announcement</button>
+				</div>
+			</div>
+			</td>
+		</tr>
+	</table>
+</form>
+
+<script type="text/javascript">
+	// When the document is ready
+	$(document).ready(function() {
+
+		$('#expirydate').datepicker();
+
+	});
+
+	$(document).ready(function() {
+
+		$('#startdate').datepicker();
+
+	});
+</script>

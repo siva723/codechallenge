@@ -1,0 +1,46 @@
+<h2>All Announcements <a class="btn btn-primary pull-right" href="#/create"><i class="icon-plus-sign icon-white"></i> New Announcement</a></h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Announcement
+        </th>
+        <th>
+            Start Date
+        </th>
+         <th>
+            Expiry Date
+        </th>
+        <th>Edit</th>
+        <th>Delete</th>        
+        
+    </tr>
+   
+    <tr class="success-{{announcement.edit}}" ng-repeat="announcement in announcements">
+        <td>{{announcement.id}}</td>
+        <td>
+            {{announcement.title}}
+        </td>
+        <td>
+            <textarea class="form-control"  cols="25" id="body"  ng-value="announcement.body" ng-model="announcement.body"/>
+        </td>
+        <td>
+            {{announcement.startDate |date:'medium'}}
+        </td>
+        <td>
+            {{announcement.expiryDate |date:'medium'}}
+        </td>
+        <td>
+            <input type="checkbox" ng-change="announcementEdit(announcement)" ng-value="announcement.edit" ng-model="announcement.edit">
+        </td>
+        <td>
+            <input type="checkbox" ng-change="announcementDelete(announcement)" ng-value="announcement.delete" ng-model="announcement.delete">
+        </td>
+    </tr>
+</table>
